@@ -1,5 +1,5 @@
-var Profile = require("./profile.js");
-var renderer = require("./renderer.js");
+var Profile = require("./profile.js"); //JSON API
+var renderer = require("./renderer.js"); //Response view function
 var querystring = require("querystring");
 var commonHeaders = {'Content-Type': 'text/html'};
 
@@ -35,7 +35,7 @@ function home(request, response) {
 function user(request, response) {
   //if url == "/..."
   var username = request.url.replace("/", "");
-  if(username.length > 0) {
+  if(username.length > 0) { // greater than zero to show it actually exists or actual data
     response.writeHead(200, commonHeaders);
     renderer.view("header", {}, response);
 
