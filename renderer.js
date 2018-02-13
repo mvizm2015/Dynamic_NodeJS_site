@@ -14,6 +14,7 @@ function mergeValues(values, content) {
 
 function view(templateName, values, response) {
   //Read from the template file s
+  //method readFileSync will sinc files synchronously so a callback is not needed
   var fileContents = fs.readFileSync('./views/' + templateName + '.html', {encoding: "utf8"});
 
   //Insert values into the content
